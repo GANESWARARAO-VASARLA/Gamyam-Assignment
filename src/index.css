@@ -49,25 +49,40 @@ code {
   text-align: center;
   margin-top: 0px;
 }
-.love-button {
+
+.like-icon {
+  background: white; 
+  width: 35px;
+  padding-top: 5px; 
+  height: 35px; 
+  border-radius: 50%; 
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: 10px; 
+  right: 10px; 
+  font-size: 20px;
+  color: red;
   cursor: pointer;
-  font-size: 24px;
-  color: gray;
-  transition: color 0.3s ease;
 }
 
-.love-button:hover {
-  color: red;
+.share-icon {
+  background: white; 
+  width: 30px;
+  padding-top: 6px; 
+  height: 30px; 
+  border-radius: 50%; 
+  position: absolute;
+  top: 10px; 
+  right: 10px; 
+  font-size: 15px;
+  color: black;
+  cursor: pointer;
 }
 
 
 .content {
   /* margin-top: 100px; */
   padding-top: 80px;
-  margin: 10px; 
+  margin: 0px; 
 }
 
 .land-cards {
@@ -78,7 +93,7 @@ code {
 }
 
 .land-card {
-  width: 300px;
+  width: 350px;
   background: #f9f9f9;
   border: 1px solid #ddd;
   border-radius: 8px;
