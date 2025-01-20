@@ -1,34 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import InfiniteScroll from "react-infinite-scroll-component";
-import axios from "axios";
 import { Carousel } from "react-responsive-carousel";
 import FormattedLandPrice from "./FormattedDetails";
+import useFetchLands from "./useFetchLands";
 
 const LandList = () => {
-  const [lands, setLands] = useState([]);
-  const [page, setPage] = useState(1);
-  const [hasMore, setHasMore] = useState(true);
-
-  const fetchLands = async () => {
-    try {
-      const response = await axios.get(
-        `https://prod-be.1acre.in/lands/?division=24&page_size=10&page=${page}&ordering=-updated_at`
-      );
-      const data = response.data.results;
-      if (data.length > 0) {
-        setLands((prevLands) => [...prevLands, ...data]);
-        setPage((prevPage) => prevPage + 1);
-      } else {
-        setHasMore(false);
-      }
-    } catch (error) {
-      console.error("Error fetching lands:", error);
-    }
-  };
-
-  useEffect(() => {
-    fetchLands();
-  }, []);
+  const { lands, hasMore, fetchLands } = useFetchLands();
 
   return (
     <div>
